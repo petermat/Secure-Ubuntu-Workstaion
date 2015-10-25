@@ -14,7 +14,6 @@ Tested on Thinkpad T440s with Ubuntu 15.04.
 ## Boot loader
 * TPM (requires a laptop with TPM support): TrustedGRUB (requires laptop with TPM)
 https://web.archive.org/web/20141221071438/http://www.grounation.org/index.php?post/2008/07/04/8-how-to-use-a-tpm-with-linux
-~~http://www.grounation.org/index.php?post/2008/07/04/8-how-to-use-a-tpm-with-linux~~
 
 ## AppArmor
 * Enable the default configuration
@@ -23,7 +22,19 @@ https://web.archive.org/web/20141221071438/http://www.grounation.org/index.php?p
 * https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/AppArmorProfiles
 
 ## Full disk encryption
-* (or) encrypted home directory if you’re worried about performance
+* **Basic Setup** Start by booting to your Ubuntu DVD or USB stick and follow the simple instructions to install Ubuntu. When you get to the “Installation type” page, check the box “Encrypt the new Ubuntu installation for security,” and then click Install Now.
+
+
+  On the next page, “Choose a security key,” you must type your encryption passphrase. You’ll have to type this each time you power on your computer to unlock your encrypted disk. If you want your passphrase to survive guessing attempts by even the most well-funded spy agencies in the world, you should follow the instructions [here](https://firstlook.org/theintercept/2015/03/26/passphrases-can-memorize-attackers-cant-guess/).
+
+  Then click Install Now, and follow the rest of the instructions until you get to the “Who are you?” page. Make sure to choose a strong password—if someone steals your laptop while it’s suspended, this password is all that comes between the attacker and your data. And make sure that “Require my password to log in” is checked, and that “Log in automatically” is not checked. There is no reason to check “Encrypt my home folder” here, because you’re already encrypting your entire disk.
+
+
+* **Cold boot Attack protection** On a typical system with disk encryption, the encryption key is stored in RAM. This would be fine, if it weren't for the fact that there are several ways for an attacker with physical access, to read the contents of the RAM on a machine which is running, or which has been running recently. 
+
+
+  [TRESOR](http://www1.informatik.uni-erlangen.de/tresor) is an implementation of AES as a cipher kernel module which stores the keys in the CPU debug registers, and which handles all of the crypto operations directly on the CPU, in a way which prevents the key from ever entering RAM. The laptop I purchased works perfectly with TRESOR as it contains a Core i5 processor which has the AES-NI instruction set.
+
 
 ## Firefox / Chromium
 * Lastpass
