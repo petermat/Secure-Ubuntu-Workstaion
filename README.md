@@ -1,4 +1,4 @@
-# Secure-Ubuntu-Workstaion
+# Secure Ubuntu Workstaion
 How to secure Ubuntu linux workstation.
 This is a list of tips and tricks you might apply to your laptop setup in order to make it more secure. 
 Tested on Thinkpad T440s with Ubuntu 15.04.
