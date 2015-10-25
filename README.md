@@ -149,5 +149,6 @@ OSSEC Policy monitor
   * http://ossec-docs.readthedocs.org/en/latest/manual/rootcheck/audit/CIS_debian.html
 ----------------------------------------
 #Sources
+http://seclists.org/fulldisclosure/2014/Jun/84
 https://github.com/andresriancho/secure-ubuntu-desktop/wiki/Secure-Ubuntu-Desktop
 https://grepular.com/Protecting_a_Laptop_from_Simple_and_Sophisticated_Attacks
