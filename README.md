@@ -22,18 +22,13 @@ https://web.archive.org/web/20141221071438/http://www.grounation.org/index.php?p
 * https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/AppArmorProfiles
 
 ## Full disk encryption
-* **Basic Setup** Start by booting to your Ubuntu DVD or USB stick and follow the simple instructions to install Ubuntu. When you get to the “Installation type” page, check the box “Encrypt the new Ubuntu installation for security,” and then click Install Now.
-
-
-  On the next page, “Choose a security key,” you must type your encryption passphrase. You’ll have to type this each time you power on your computer to unlock your encrypted disk. If you want your passphrase to survive guessing attempts by even the most well-funded spy agencies in the world, you should follow the instructions [here](https://firstlook.org/theintercept/2015/03/26/passphrases-can-memorize-attackers-cant-guess/).
-
-  Then click Install Now, and follow the rest of the instructions until you get to the “Who are you?” page. Make sure to choose a strong password—if someone steals your laptop while it’s suspended, this password is all that comes between the attacker and your data. And make sure that “Require my password to log in” is checked, and that “Log in automatically” is not checked. There is no reason to check “Encrypt my home folder” here, because you’re already encrypting your entire disk.
-
-
-* **Cold boot Attack protection** On a typical system with disk encryption, the encryption key is stored in RAM. This would be fine, if it weren't for the fact that there are several ways for an attacker with physical access, to read the contents of the RAM on a machine which is running, or which has been running recently. 
-
-
-  [TRESOR](http://www1.informatik.uni-erlangen.de/tresor) is an implementation of AES as a cipher kernel module which stores the keys in the CPU debug registers, and which handles all of the crypto operations directly on the CPU, in a way which prevents the key from ever entering RAM. The laptop I purchased works perfectly with TRESOR as it contains a Core i5 processor which has the AES-NI instruction set.
+* **Basic Setup** 
+ * Start by booting to your Ubuntu DVD or USB stick and follow the simple instructions to install Ubuntu. When you get to the “Installation type” page, check the box “Encrypt the new Ubuntu installation for security,” and then click Install Now.
+ * On the next page, “Choose a security key,” you must type your encryption passphrase. You’ll have to type this each time you power on your computer to unlock your encrypted disk. If you want your passphrase to survive guessing attempts by even the most well-funded spy agencies in the world, you should follow the instructions [here](https://firstlook.org/theintercept/2015/03/26/passphrases-can-memorize-attackers-cant-guess/).
+* Then click Install Now, and follow the rest of the instructions until you get to the “Who are you?” page. Make sure to choose a strong password—if someone steals your laptop while it’s suspended, this password is all that comes between the attacker and your data. And make sure that “Require my password to log in” is checked, and that “Log in automatically” is not checked. There is no reason to check “Encrypt my home folder” here, because you’re already encrypting your entire disk.
+* **Cold boot Attack protection** 
+ * On a typical system with disk encryption, the encryption key is stored in RAM. This would be fine, if it weren't for the fact that there are several ways for an attacker with physical access, to read the contents of the RAM on a machine which is running, or which has been running recently. 
+ * [TRESOR](http://www1.informatik.uni-erlangen.de/tresor) is an implementation of AES as a cipher kernel module which stores the keys in the CPU debug registers, and which handles all of the crypto operations directly on the CPU, in a way which prevents the key from ever entering RAM. The laptop I purchased works perfectly with TRESOR as it contains a Core i5 processor which has the AES-NI instruction set.
 
 
 ## Firefox / Chromium
@@ -48,21 +43,10 @@ https://web.archive.org/web/20141221071438/http://www.grounation.org/index.php?p
 * Run the process under a different user as explained in https://grepular.com/Protecting_a_Laptop_from_Simple_and_Sophisticated_Attacks (Securing the Web browser section)
 * Setup startpage (https://startpage.com/) as your default search engine
 * **Run chrome as different user**
-
-
-  My normal user account is called "mike". For Firefox I created a new user account called "mike.firefox". "/usr/bin/firefox" was merely a symlink to /usr/lib/firefox-6.0/firefox.sh so I replaced it with a shell script which runs:
-
-
-  ```sudo -u mike.firefox -H /usr/lib/firefox-6.0/firefox.sh```
-
-
-  I didn't want to be prompted for a password every time I tried to run firefox though, so I configured sudo to allow me to run that command without entering my password by adding this to the end of my /etc/sudoers (use the visudo command to do this)
-
-
+ * My normal user account is called "mike". For Firefox I created a new user account called "mike.firefox". "/usr/bin/firefox" was merely a symlink to /usr/lib/firefox-6.0/firefox.sh so I replaced it with a shell script which runs: ```sudo -u mike.firefox -H /usr/lib/firefox-6.0/firefox.sh```
+ * I didn't want to be prompted for a password every time I tried to run firefox though, so I configured sudo to allow me to run that command without entering my password by adding this to the end of my /etc/sudoers (use the visudo command to do this)
   ```mike ALL=(mike.firefox) NOPASSWD: /usr/lib/firefox-6.0/firefox.sh```
-
-
-  The "mike.firefox" user doesn't have access to the X display though when I'm logged in as "mike". To give it access I went to "System->Preferences->Startup Applications" and told it to run the command "xhost +SI:localuser:mike.firefox" when I log in. Now, when I run firefox, it runs as user mike.firefox instead. Something to look out for when you do this: Any command that firefox spawns, will it's self run as user mike.firefox. I noticed that when playing flash, there was no audio. This is because the mike.firefox user that I created did not have access to the audio device. To give it permission, I ran the command "adduser mike.firefox audio". I also set up permissions so that user "mike" could access "/home/mike.firefox/Downloads" as that is where Firefox will now download to. I symlinked /home/mike/Downloads/firefox to this directory for simplicity.
+ * The "mike.firefox" user doesn't have access to the X display though when I'm logged in as "mike". To give it access I went to "System->Preferences->Startup Applications" and told it to run the command "xhost +SI:localuser:mike.firefox" when I log in. Now, when I run firefox, it runs as user mike.firefox instead. Something to look out for when you do this: Any command that firefox spawns, will it's self run as user mike.firefox. I noticed that when playing flash, there was no audio. This is because the mike.firefox user that I created did not have access to the audio device. To give it permission, I ran the command "adduser mike.firefox audio". I also set up permissions so that user "mike" could access "/home/mike.firefox/Downloads" as that is where Firefox will now download to. I symlinked /home/mike/Downloads/firefox to this directory for simplicity.
 
 
 ## Pidgin
@@ -114,6 +98,7 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
 
 # Privacy
 * Remove Amazon desktop search
+ * All settings -> Security & Privacy -> Search -> Include online search results (OFF)
 
 # Habits
 * Re-Install your workstation once every 8 months (useful?)
