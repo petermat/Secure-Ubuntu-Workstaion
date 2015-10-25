@@ -147,6 +147,8 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
  * https://cisofy.com/lynis/
 * OSSEC Policy monitor 
  * http://ossec-docs.readthedocs.org/en/latest/manual/rootcheck/audit/CIS_debian.html
+ 
+ 
 ----------------------------------------
 #Sources
 http://seclists.org/fulldisclosure/2014/Jun/84
