@@ -11,7 +11,7 @@ Tested on Thinkpad T440s with Ubuntu 15.04.
 * Some laptops provide a utility to lock a hard disk with a password. These passwords are not the same as BIOS passwords. Set this password to prevent access to the hard-disk.
 * Set a password for BIOS access
 
-## Boot loader
+## Trusted Boot loader
 * TPM (requires a laptop with TPM support): TrustedGRUB (requires laptop with TPM)
 https://web.archive.org/web/20141221071438/http://www.grounation.org/index.php?post/2008/07/04/8-how-to-use-a-tpm-with-linux
 
@@ -104,9 +104,9 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
 * [Disable guest account](http://www.ubuntugeek.com/ubuntu-tiphow-to-disable-guest-account-in-ubuntu-12-04precise.html)
 
 ## Antivirus and related software:
-* rkhunter
+* rkhunter (?)
 * http://afick.sourceforge.net/
-* ESET Antivirus
+* [ESET Antivirus](http://www.eset.com/me/home/products/antivirus-linux/)
 
 # Services
 * Google two factor authentication
