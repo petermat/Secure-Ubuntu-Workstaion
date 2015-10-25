@@ -1,31 +1,7 @@
-# Secure Ubuntu Workstaion
-How to secure Ubuntu linux workstation.
+# Secure Ubuntu Workstation
+How to secure Ubuntu Linux workstation.
 This is a list of tips and tricks you might apply to your laptop setup in order to make it more secure. 
 Tested on Thinkpad T440s with Ubuntu 15.04.
-
-# Table of content
-
-- [Software](#software)
-  - [BIOS](#bios)
-  - [Trusted Boot loader](#trusted-boot-loader)
-  - [AppArmor](#apparmor)
-  - [Full disk encryption](#full-disk-encryption)
-  - [Firefox / Chromium](#firefox--chromium)
-  - [Pidgin](#pidgin)
-  - [Truecrypt](#truecrypt)
-  - [Sandboxing](#sandboxing)
-  - [GPG](#gpg)
-  - [Hardware you might not use:](#hardware-you-might-not-use)
-  - [Network](#network)
-  - [Lock desktop](#lock-desktop)
-  - [Antivirus and related software:](#antivirus-and-related-software)
-- [Services](#services)
-- [Privacy](#privacy)
-- [Habits](#habits)
-- [Hardware](#hardware)
-- [Paranoid](#paranoid)
-- [How to test your station for compliance](#how-to-test-your-station-for-compliance)
-- [Sources](#sources)
 
 # Software
 
@@ -91,7 +67,7 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
  * “Tools > Options > Privacy > Passwords”, choose “Use a master password to encrypt stored passwords”. You will then be prompted to choose a Master Password.
  * There are some methods to make your profile secure which are documented in mozilla's knowledge base article [Protecting the contents of the profile](http://kb.mozillazine.org/Protecting_the_contents_of_the_profile_-_mail)
 
-## Hardware you might not use
+## Hardware you might not use:
 * Disable bluetooth
 * Disable firewire
 * Only enable USB after successful login (need confirmation on how this is done).
@@ -114,7 +90,7 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
 ## Antivirus and related software:
 * rkhunter (?)
 * http://afick.sourceforge.net/
-* [ESET Antivirus](http://www.eset.com/me/home/products/antivirus-linux/) (Commercial)
+* [ESET Antivirus](http://www.eset.com/me/home/products/antivirus-linux/)
 
 # Services
 * Google two factor authentication
