@@ -3,6 +3,30 @@ How to secure Ubuntu Linux workstation.
 This is a list of tips and tricks you might apply to your laptop setup in order to make it more secure. 
 Tested on Thinkpad T440s with Ubuntu 15.04.
 
+# Table of content
+- [Software](#software)
+  - [BIOS](#bios)
+  - [Trusted Boot loader](#trusted-boot-loader)
+  - [AppArmor](#apparmor)
+  - [Full disk encryption](#full-disk-encryption)
+  - [Firefox / Chromium](#firefox--chromium)
+  - [Pidgin](#pidgin)
+  - [Truecrypt](#truecrypt)
+  - [Sandboxing](#sandboxing)
+  - [GPG](#gpg)
+  - [Hardware you might not use:](#hardware-you-might-not-use)
+  - [Network](#network)
+  - [Lock desktop](#lock-desktop)
+  - [Antivirus and related software:](#antivirus-and-related-software)
+- [Services](#services)
+- [Privacy](#privacy)
+- [Habits](#habits)
+- [Hardware](#hardware)
+- [Paranoid](#paranoid)
+- [How to test your station for compliance](#how-to-test-your-station-for-compliance)
+- [Sources](#sources)
+
+
 # Software
 
 ## BIOS
