@@ -117,7 +117,7 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
 * Tor IM Browser Bundle
  * For encrypted and private (won’t know your IP) chat
  
- ----------------------------------------
- #Sources
- https://github.com/andresriancho/secure-ubuntu-desktop/wiki/Secure-Ubuntu-Desktop
- https://grepular.com/Protecting_a_Laptop_from_Simple_and_Sophisticated_Attacks
+----------------------------------------
+#Sources
+https://github.com/andresriancho/secure-ubuntu-desktop/wiki/Secure-Ubuntu-Desktop
+https://grepular.com/Protecting_a_Laptop_from_Simple_and_Sophisticated_Attacks
