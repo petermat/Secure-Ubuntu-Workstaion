@@ -117,6 +117,12 @@ In all cases truecrypt hidden volumes are recommended. Use the main volume for s
 * Tor IM Browser Bundle
  * For encrypted and private (won’t know your IP) chat
  
+# How to test your station for compliance
+* Nessus Compliance check
+* Lynis
+ * https://cisofy.com/lynis/
+OSSEC Policy monitor 
+  * http://ossec-docs.readthedocs.org/en/latest/manual/rootcheck/audit/CIS_debian.html
 ----------------------------------------
 #Sources
 https://github.com/andresriancho/secure-ubuntu-desktop/wiki/Secure-Ubuntu-Desktop
